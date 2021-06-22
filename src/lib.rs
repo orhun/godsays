@@ -1,15 +1,41 @@
 use rand::seq::SliceRandom;
 use rand::thread_rng;
+use rust_embed::RustEmbed;
 use std::error::Error;
 use std::io::Write;
 
-const LEN: usize = 32;
+#[derive(RustEmbed)]
+#[folder = "."]
+struct Asset;
 
-pub fn speak<W: Write>(words: Vec<String>, out: &mut W) -> Result<(), Box<dyn Error>> {
-    let words = words.choose_multiple(&mut thread_rng(), LEN);
-    for word in words {
-        write!(out, "{} ", word)?;
+#[derive(Debug)]
+pub struct God {
+    words: Vec<String>,
+    amount: usize,
+}
+
+impl God {
+    pub fn init(path: &str, amount: usize) -> Self {
+        Self {
+            words: Self::read_words(path),
+            amount,
+        }
     }
-    writeln!(out)?;
-    Ok(())
+
+    fn read_words(path: &str) -> Vec<String> {
+        let happy = Asset::get(path).expect("Unable to read the file");
+        String::from_utf8_lossy(&happy)
+            .lines()
+            .map(String::from)
+            .collect()
+    }
+
+    pub fn speak<W: Write>(self, out: &mut W) -> Result<(), Box<dyn Error>> {
+        let words = self.words.choose_multiple(&mut thread_rng(), self.amount);
+        for word in words {
+            write!(out, "{} ", word)?;
+        }
+        writeln!(out)?;
+        Ok(())
+    }
 }
