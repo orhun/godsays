@@ -13,6 +13,7 @@ include = ["src/**/*", "Cargo.*", "LICENSE", "README.md"]
 edition = "2018"
 
 [dependencies]
+rand = "0.8"
 
 [profile.dev]
 opt-level = 0
