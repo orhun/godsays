@@ -1,8 +1,6 @@
 use rand::seq::SliceRandom;
 use rand::thread_rng;
 use rust_embed::RustEmbed;
-use std::error::Error;
-use std::io::Write;
 
 #[derive(RustEmbed)]
 #[folder = "."]
@@ -30,12 +28,11 @@ impl God {
             .collect()
     }
 
-    pub fn speak<W: Write>(self, out: &mut W) -> Result<(), Box<dyn Error>> {
-        let words = self.words.choose_multiple(&mut thread_rng(), self.amount);
-        for word in words {
-            write!(out, "{} ", word)?;
-        }
-        writeln!(out)?;
-        Ok(())
+    pub fn speak(self) -> String {
+        self.words
+            .choose_multiple(&mut thread_rng(), self.amount)
+            .map(String::from)
+            .collect::<Vec<String>>()
+            .join(" ")
     }
 }
