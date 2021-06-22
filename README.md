@@ -35,6 +35,12 @@ So I reproduced this logic in Rust and created a simple CLI program ([godsays](#
 
 ## Installation
 
+Install the CLI tool from [crates.io](https://crates.io/crates/godsays):
+
+```sh
+cargo install godsays
+```
+
 ## Usage
 
 ### CLI
