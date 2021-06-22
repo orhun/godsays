@@ -9,12 +9,23 @@ homepage = "https://github.com/orhun/godsays"
 repository = "https://github.com/orhun/godsays"
 keywords = ["templeos"]
 categories = ["command-line-utilities", "web-programming::http-server"]
-include = ["src/**/*", "Cargo.*", "LICENSE", "README.md"]
 edition = "2018"
+default-run = "godsays"
+
+[features]
+server = ["hyper", "tokio", "pretty_env_logger"]
 
 [dependencies]
 rand = "0.8"
 rust-embed = "5.9"
+hyper = { version = "0.14", features = ["full"], optional = true }
+tokio = { version = "1", features = ["full"], optional = true }
+pretty_env_logger = { version = "0.4", optional = true }
+
+[[bin]]
+name = "godsays-server"
+path = "src/bin/server.rs"
+required-features = ["server"]
 
 [profile.dev]
 opt-level = 0

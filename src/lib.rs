@@ -6,7 +6,7 @@ use rust_embed::RustEmbed;
 #[folder = "."]
 struct Asset;
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub struct God {
     words: Vec<String>,
     amount: usize,
@@ -28,7 +28,7 @@ impl God {
             .collect()
     }
 
-    pub fn speak(self) -> String {
+    pub fn speak(&self) -> String {
         self.words
             .choose_multiple(&mut thread_rng(), self.amount)
             .map(String::from)
