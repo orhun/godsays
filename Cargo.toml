@@ -1,0 +1,35 @@
+[package]
+name = "godsays"
+version = "0.1.0"
+description = "Rust port of the programmer Terry Davis' (RIP) GodSpeaks program"
+authors = ["Orhun Parmaksız <orhunparmaksiz@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/orhun/godsays"
+repository = "https://github.com/orhun/godsays"
+keywords = ["templeos"]
+categories = ["command-line-utilities", "web-programming::http-server"]
+include = ["src/**/*", "Cargo.*", "LICENSE", "README.md"]
+edition = "2018"
+
+[dependencies]
+
+[profile.dev]
+opt-level = 0
+debug = true
+panic = "abort"
+
+[profile.test]
+opt-level = 0
+debug = true
+
+[profile.release]
+opt-level = 3
+debug = false
+panic = "abort"
+lto = true
+codegen-units = 1
+
+[profile.bench]
+opt-level = 3
+debug = false
