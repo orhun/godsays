@@ -1,0 +1,11 @@
+# Directories
+/.git/
+/.github/
+/target/
+/docker/
+
+# Files
+.editorconfig
+.gitignore
+*.md
+LICENSE
