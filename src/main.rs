@@ -1,10 +1,18 @@
 use godsays::speak;
-use std::fs;
+use rust_embed::RustEmbed;
 use std::io;
 
+#[derive(RustEmbed)]
+#[folder = "."]
+struct Asset;
+
 fn main() {
-    let words = fs::read_to_string("HAPPY.txt").expect("Unable to read HAPPY.txt");
-    if let Err(e) = speak(words.lines().map(String::from).collect(), &mut io::stdout()) {
+    let happy = Asset::get("HAPPY.txt").expect("Unable to read HAPPY.txt");
+    let words = String::from_utf8_lossy(&happy)
+        .lines()
+        .map(String::from)
+        .collect();
+    if let Err(e) = speak(words, &mut io::stdout()) {
         eprintln!("Error: {:?}", e)
     }
 }
