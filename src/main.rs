@@ -1,6 +1,6 @@
 use godsays::God;
 
 fn main() {
-    let god = God::init("HAPPY.txt", 32);
+    let god = God::init("Happy.TXT", 32);
     println!("{}", god.speak());
 }

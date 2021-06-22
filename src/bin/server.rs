@@ -42,7 +42,7 @@ pub async fn run_server(addr: &str, god: God) -> Result<(), Box<dyn Error + Send
 
 fn main() {
     pretty_env_logger::init();
-    let god = God::init("HAPPY.txt", 32);
+    let god = God::init("Happy.TXT", 32);
     if let Err(e) = run_server(
         &env::var("ADDR").unwrap_or_else(|_| String::from("127.0.0.1:3000")),
         god,
