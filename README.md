@@ -107,13 +107,14 @@ Pull the latest image from Docker Hub and run the container:
 
 ```sh
 docker pull orhunp/godsays-server
+docker run --rm -e "ADDR=0.0.0.0:3000" -dp 3000:3000 orhunp/godsays-server
 ```
 
 Or do it manually:
 
 ```sh
 docker build -f docker/server/Dockerfile -t godsays-server .
-docker run --rm -e "ADDR=0.0.0.0:3000" -dp 3030:3000 godsays-server
+docker run --rm -e "ADDR=0.0.0.0:3000" -dp 3000:3000 godsays-server
 ```
 
 ## See also
