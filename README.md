@@ -33,6 +33,17 @@ So I reproduced this logic in Rust and created a simple CLI program ([godsays](#
 
 > Please note that some of the words may be offensive - I am merely using Terry's original wordlist and thus cannot be held responsible for any of the views expounded by God in the generated text. The only modification that has been made to Terry's text is the replacement of underscores with spaces.
 
+- [god says](#god-says)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [CLI](#cli)
+      - [Docker](#docker)
+    - [Server](#server)
+      - [Docker](#docker-1)
+  - [See also](#see-also)
+  - [License](#license)
+  - [Copyright](#copyright)
+
 ## Installation
 
 Install the CLI tool from [crates.io](https://crates.io/crates/godsays):
