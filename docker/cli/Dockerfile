@@ -1,15 +1,9 @@
-FROM rust:1.52-slim-buster as builder
-WORKDIR /src
-COPY Cargo.toml Cargo.toml
-RUN mkdir src/ && echo "fn main() {println!(\"failed to build\")}" > src/main.rs
-RUN cargo build --release --verbose
-RUN rm -f target/release/deps/godsays*
+FROM ekidd/rust-musl-builder:latest as builder
+WORKDIR /home/rust/src
 COPY . .
 RUN cargo build --locked --release --verbose
-RUN mkdir -p build-out && cp target/release/godsays build-out/
 
-FROM debian:buster-slim as runner
-WORKDIR /app
-COPY --from=builder /src/build-out/godsays .
-USER nobody
+FROM scratch
+COPY --from=builder /home/rust/src/target/x86_64-unknown-linux-musl/release/godsays .
+USER 1000:1000
 CMD ["./godsays"]
