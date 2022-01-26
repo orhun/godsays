@@ -10,7 +10,7 @@ repository = "https://github.com/orhun/godsays"
 keywords = ["templeos"]
 categories = ["command-line-utilities", "web-programming::http-server"]
 include = ["src/**/*", "Cargo.*", "LICENSE", "README.md"]
-edition = "2018"
+edition = "2021"
 default-run = "godsays"
 
 [features]
