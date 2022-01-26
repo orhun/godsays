@@ -22,7 +22,7 @@ impl God {
 
     fn read_words(path: &str) -> Vec<String> {
         let happy = Asset::get(path).expect("Unable to read the file");
-        String::from_utf8_lossy(&happy)
+        String::from_utf8_lossy(&happy.data)
             .lines()
             .map(String::from)
             .collect()
