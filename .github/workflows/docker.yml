@@ -10,7 +10,7 @@ on:
 jobs:
   docker:
     name: Docker
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -18,22 +18,29 @@ jobs:
         run: |
           docker build -f docker/cli/Dockerfile -t godsays .
           docker build -f docker/server/Dockerfile -t godsays-server .
+
       - name: Tag
         run: |
           docker tag godsays orhunp/godsays:latest
           docker tag godsays docker.pkg.github.com/orhun/godsays/godsays:latest
           docker tag godsays-server orhunp/godsays-server:latest
           docker tag godsays-server docker.pkg.github.com/orhun/godsays/godsays-server:latest
+
       - name: Login (Docker Hub)
-        run: echo ${{ secrets.DOCKERHUB_PASS }} |
-          docker login -u orhunp --password-stdin
+        run: |
+          echo ${{ secrets.DOCKERHUB_TOKEN }} |
+            docker login -u orhunp --password-stdin
+
       - name: Push (Docker Hub)
         run: |
           docker push orhunp/godsays:latest
           docker push orhunp/godsays-server:latest
+
       - name: Login (Package Registry)
-        run: echo ${{ secrets.GITHUB_TOKEN }} |
-          docker login -u orhun docker.pkg.github.com --password-stdin
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} |
+            docker login -u orhun docker.pkg.github.com --password-stdin
+
       - name: Push (Package Registry)
         run: |
           docker push docker.pkg.github.com/orhun/godsays/godsays:latest
