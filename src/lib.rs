@@ -1,5 +1,3 @@
-use rand::seq::SliceRandom;
-use rand::thread_rng;
 use rust_embed::RustEmbed;
 
 #[derive(RustEmbed)]
@@ -29,9 +27,8 @@ impl God {
     }
 
     pub fn speak(&self) -> String {
-        self.words
-            .choose_multiple(&mut thread_rng(), self.amount)
-            .map(String::from)
+        (0..self.amount)
+            .map(|_| self.words[fastrand::usize(..self.words.len())].to_string())
             .collect::<Vec<String>>()
             .join(" ")
     }
