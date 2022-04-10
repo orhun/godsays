@@ -144,4 +144,4 @@ docker run --rm -e "ADDR=0.0.0.0:3000" -dp 3000:3000 godsays-server
 
 ## Copyright
 
-Copyright © 2021, [Orhun Parmaksız](mailto:orhunparmaksiz@gmail.com)
+Copyright © 2021-2022, [Orhun Parmaksız](mailto:orhunparmaksiz@gmail.com)
