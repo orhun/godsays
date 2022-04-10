@@ -29,6 +29,7 @@ impl God {
     pub fn speak(&self) -> String {
         (0..self.amount)
             .map(|_| self.words[fastrand::usize(..self.words.len())].to_string())
+            .filter(|v| !v.is_empty())
             .collect::<Vec<String>>()
             .join(" ")
     }
