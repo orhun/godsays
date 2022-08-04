@@ -152,7 +152,7 @@ dependencies = [
 
 [[package]]
 name = "godsays"
-version = "0.1.3"
+version = "0.1.4"
 dependencies = [
  "fastrand",
  "hyper",
