@@ -9,7 +9,7 @@ homepage = "https://github.com/orhun/godsays"
 repository = "https://github.com/orhun/godsays"
 keywords = ["templeos"]
 categories = ["command-line-utilities", "web-programming::http-server"]
-include = ["src/**/*", "Cargo.*", "LICENSE", "README.md"]
+include = ["src/**/*", "Cargo.*", "LICENSE", "README.md", "Happy.TXT"]
 edition = "2021"
 default-run = "godsays"
 
