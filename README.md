@@ -134,7 +134,7 @@ docker run --rm -e "ADDR=0.0.0.0:3000" -dp 3000:3000 godsays-server
 * [TempleOS Archive](https://archive.org/details/TerryADavis_TempleOS_Archive)
 * https://www.youtube.com/watch?v=xDHQ1yBbS-Q (Tribute Terry Davis)
 * https://www.youtube.com/watch?v=mBgIBF9Y6PE (TempleOS: Terry Responds to the Haters)
-* https://jcpsimmons.github.io/Godspeak-Generator/ (Javascript port)
+* https://jcpsimmons.github.io/Godspeak-Generator/ (JavaScript port)
 * https://github.com/rethyxyz/godspeaks (Python port)
 * https://christine.website/blog/templeos-2-god-the-rng-2019-05-30 (`god`, the Random Number Generator)
 
