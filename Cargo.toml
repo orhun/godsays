@@ -17,8 +17,8 @@ default-run = "godsays"
 server = ["hyper", "tokio", "pretty_env_logger"]
 
 [dependencies]
-fastrand = "1.7.0"
-rust-embed = "6.3"
+fastrand = "1.8.0"
+rust-embed = "6.4"
 hyper = { version = "0.14", features = ["full"], optional = true }
 tokio = { version = "1", features = ["full"], optional = true }
 pretty_env_logger = { version = "0.4", optional = true }
