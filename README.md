@@ -12,8 +12,8 @@ Terrence Andrew Davis (December 15, 1969 – August 11, 2018) was an American pr
 
 About TempleOS, from his own words:
 
-> TempleOS is God's official temple.  Just like Solomon's temple, this is a
-community focal point where offerings are made and God's oracle is consulted.
+> TempleOS is God's official temple. Just like Solomon's temple, this is a
+> community focal point where offerings are made and God's oracle is consulted.
 
 Contained in Terry's TempleOS masterpiece were various random text generators. Terry believed that by generating this text one could "speak to God". Through making random associations in the text, much like a [Rorschach ink-blot test](https://en.wikipedia.org/wiki/Rorschach_test).
 
@@ -34,15 +34,15 @@ So I reproduced this logic in Rust and created a simple CLI program ([godsays](#
 > Please note that some of the words may be offensive - I am merely using Terry's original wordlist and thus cannot be held responsible for any of the views expounded by God in the generated text. The only modification that has been made to Terry's text is the replacement of underscores with spaces.
 
 - [god says](#god-says)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [CLI](#cli)
-      - [Docker](#docker)
-    - [Server](#server)
-      - [Docker](#docker-1)
-  - [See also](#see-also)
-  - [License](#license)
-  - [Copyright](#copyright)
+    - [Installation](#installation)
+    - [Usage](#usage)
+        - [CLI](#cli)
+            - [Docker](#docker)
+        - [Server](#server)
+            - [Docker](#docker-1)
+    - [See also](#see-also)
+    - [License](#license)
+    - [Copyright](#copyright)
 
 ## Installation
 
@@ -130,13 +130,13 @@ docker run --rm -e "ADDR=0.0.0.0:3000" -dp 3000:3000 godsays-server
 
 ## See also
 
-* https://templeos.org/
-* [TempleOS Archive](https://archive.org/details/TerryADavis_TempleOS_Archive)
-* https://www.youtube.com/watch?v=xDHQ1yBbS-Q (Tribute Terry Davis)
-* https://www.youtube.com/watch?v=mBgIBF9Y6PE (TempleOS: Terry Responds to the Haters)
-* https://jcpsimmons.github.io/Godspeak-Generator/ (JavaScript port)
-* https://github.com/rethyxyz/godspeaks (Python port)
-* https://christine.website/blog/templeos-2-god-the-rng-2019-05-30 (`god`, the Random Number Generator)
+- https://templeos.org/
+- [TempleOS Archive](https://archive.org/details/TerryADavis_TempleOS_Archive)
+- https://www.youtube.com/watch?v=xDHQ1yBbS-Q (Tribute Terry Davis)
+- https://www.youtube.com/watch?v=mBgIBF9Y6PE (TempleOS: Terry Responds to the Haters)
+- https://jcpsimmons.github.io/Godspeak-Generator/ (JavaScript port)
+- https://github.com/rethyxyz/godspeaks (Python port)
+- https://christine.website/blog/templeos-2-god-the-rng-2019-05-30 (`god`, the Random Number Generator)
 
 ## License
 
@@ -144,4 +144,4 @@ docker run --rm -e "ADDR=0.0.0.0:3000" -dp 3000:3000 godsays-server
 
 ## Copyright
 
-Copyright © 2021-2024, [Orhun Parmaksız](mailto:orhunparmaksiz@gmail.com)
+Copyright © 2021-2026, [Orhun Parmaksız](mailto:orhunparmaksiz@gmail.com)

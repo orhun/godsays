@@ -1,6 +1,6 @@
 [package]
 name = "godsays"
-version = "0.1.4"
+version = "0.1.5"
 description = "Rust port of the programmer Terry Davis' (RIP) \"god says\" program"
 authors = ["Orhun Parmaksız <orhunparmaksiz@gmail.com>"]
 license = "MIT"
